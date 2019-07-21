@@ -20,3 +20,5 @@ Dirty code for refactoring
 3. 과정
     Refactoring #1:
         if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) 문 가장 밖으로 꺼냄
+    Refactoring #2:
+        불필요한 else 문 삭제
