@@ -22,3 +22,5 @@ Dirty code for refactoring
         if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) 문 가장 밖으로 꺼냄
     Refactoring #2:
         불필요한 else 문 삭제
+    Refactoring #3:
+        중복된 조건문이 없도록 name 별로 조건문 쪼개기
