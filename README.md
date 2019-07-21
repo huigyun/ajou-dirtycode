@@ -26,3 +26,5 @@ Dirty code for refactoring
         중복된 조건문이 없도록 name 별로 조건문 쪼개기
     Refactoring #4 ~ #5:
         name 별로 쪼갠 조건문에 해당하는 중복된 조건문들 포함시키기
+    Refactoring #6:
+        함수화
