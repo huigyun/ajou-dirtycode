@@ -8,3 +8,15 @@ Dirty code for refactoring
     quality: x <= 0, 0 < x < 50, x >= 50
     위 조건에 해당하는 test 작성
     총 48(4 * 4 * 3) - 12(name이 Sulfuras인 조건은 존재x) = 36개의 test 작성
+
+2. refactoring
+    a. 불필요한 조건문(한번만 확인하면 되는 조건문) 가장 밖으로 꺼내기
+        모든 조건문에 대하여 name이 Sulfuras인 조건은 없으므로 가장 밖으로 꺼내서 처리
+    b. 중복된 조건문 병합하기
+        같은 조건을 다루는 조건문은 하나로 합쳐서 처리
+    c. refactoring 과정 마다 test 수행
+        하나의 refactoring에 test 1회 수행으로 유효한지 검사
+
+3. 과정
+    Refactoring #1:
+        if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) 문 가장 밖으로 꺼냄
