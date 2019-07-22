@@ -9,13 +9,13 @@ class DirtySample {
 
     public void updateQuality() {
         for (Item item : items) {
-            if (isNotSulfuras(item, "Sulfuras, Hand of Ragnaros")) {
+            if (!isNameSameToitemname(item, "Sulfuras, Hand of Ragnaros")) {
                 item.sellIn = item.sellIn - 1;
 
-                if (isAgedBrie(item, "Aged Brie")) {
+                if (isNameSameToitemname(item, "Aged Brie")) {
                     updateQualityForAgedBrie(item);
                 }
-                if (isBackstagePasses(item, "Backstage passes to a TAFKAL80ETC concert")) {
+                if (isNameSameToitemname(item, "Backstage passes to a TAFKAL80ETC concert")) {
                     updateQualityForBackstagePasses(item);
                 }
                 if (isNeitherAgedBrieNorBackstagePasses(item)) {
@@ -71,19 +71,11 @@ class DirtySample {
         item.quality = item.quality - 1;
     }
 
-    private boolean isBackstagePasses(Item item, String s) {
-        return item.name.equals(s);
-    }
-
-    private boolean isAgedBrie(Item item, String s) {
-        return item.name.equals(s);
+    private boolean isNameSameToitemname(Item item, String nametocompare) {
+        return item.name.equals(nametocompare);
     }
 
     private boolean isNeitherAgedBrieNorBackstagePasses(Item item) {
-        return !isAgedBrie(item, "Aged Brie") && !isBackstagePasses(item, "Backstage passes to a TAFKAL80ETC concert");
-    }
-
-    private boolean isNotSulfuras(Item item, String s) {
-        return !item.name.equals(s);
+        return !isNameSameToitemname(item, "Aged Brie") && !isNameSameToitemname(item, "Backstage passes to a TAFKAL80ETC concert");
     }
 }
